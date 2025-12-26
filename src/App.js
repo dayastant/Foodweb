@@ -2,7 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import RegisterPage from "./components/auth/RegisterPage";
+import LoginPage from "./components/auth/LoginPage";
+import HomePage from './components/home_menu/HomePage';
+import CategoriesPage from './components/home_menu/CategoriesPage';
+import MenuPage from './components/home_menu/MenuPage';
+import MenuDetailsPage from './components/home_menu/MenuDetailsPage';
+import ProfilePage from './components/profile_cart/ProfilePage';
+import { AdminRoute, CustomerRoute } from "./services/Guard";
+import UpdateProfilePage from './components/profile_cart/UpdateProfilePage';
+import OrderHistoryPage from './components/profile_cart/OrderHistoryPage';
+import { Navigate } from 'react-router-dom';
+import LeaveReviewPage from './components/profile_cart/LeaveReviewPage';
 
 function App() {
   return (
@@ -10,7 +22,27 @@ function App() {
       <Navbar />
       <div className='content'>
         <Routes>
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/menu/:id" element={<MenuDetailsPage />} />
+          
+
+          <Route path="/profile" element={<CustomerRoute element={<ProfilePage />} />} />
+
+          <Route path="/update" element={<CustomerRoute element={<UpdateProfilePage />} />} />
+
+          <Route path="/my-order-history" element={<CustomerRoute element={<OrderHistoryPage />} />} />
+          <Route path="/leave-review" element={<CustomerRoute element={<LeaveReviewPage />} />} />
+
+
+
+
+          <Route path="*" element={<Navigate to={"/home"} />} />
         </Routes>
 
       </div>
