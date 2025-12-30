@@ -92,6 +92,10 @@ const MenuPage = () => {
                 </button>
             </div>
 
+            <p className="menu-description">
+                Welcome to our delicious menu! Here you will find a wide variety of fresh and flavorful dishes, carefully crafted to satisfy every taste. From hearty meals to light snacks, each item is prepared with high-quality ingredients and a touch of love. Browse through our selection, search for your favorite dishes, and discover new culinary delights. Whether you are craving something sweet, savory, or healthy, our menu has something special for everyone. Enjoy a delightful experience as you explore the tastes and aromas we proudly offer.
+            </p>
+
 
             <div className="menu-grid">
                 {filteredMenus.map((item) => (
@@ -108,9 +112,9 @@ const MenuPage = () => {
                         </div>
                     </div>
                 ))}
-                
+
             </div>
-            
+
         </div>
     );
 

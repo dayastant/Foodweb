@@ -4,7 +4,7 @@ export default class ApiService {
 
 
     static BASE_URL = "http://localhost:8089/api";
-    // static BASE_URL = "http://18.221.120.102:8090/api"; //production base url
+    // static BASE_URL = "http://18.221.120.102:8089/api"; //production base url
 
     static saveToken(token) {
         localStorage.setItem("token", token);

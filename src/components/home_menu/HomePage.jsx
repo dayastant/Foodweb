@@ -66,7 +66,7 @@ const HomePage = () => {
                                 Explore Menu
                             </button>
 
-                            <p className="home-hero-trust">
+                            <p className="">
                                 ⭐ 4.8 Rating • 10,000+ Happy Customers
                             </p>
                         </div>
@@ -87,6 +87,7 @@ const HomePage = () => {
 
             <section className="home-featured-categories">
                 <h2 className="home-section-title">Featured Categories</h2>
+                <p className="p-featured-categories"> Discover delicious meals, fresh ingredients, and popular food categories curated just for you.</p>
                 <div className="home-category-carousel">
                     {categories.map((category) => (
                         <div key={category.id}
@@ -114,6 +115,59 @@ const HomePage = () => {
                     </button>
                 </div>
             </section>
+
+            
+            <section class="about-area bg-white fade-anim delay-1">
+                <div class="content-wrap">
+                    <h2>About Us</h2>
+                    <p>
+                        We deliver high-quality services with customer satisfaction as our top priority.
+                    </p>
+
+                    <div class="counter-wrap">
+                        <div class="counter-item fade-anim delay-2">
+                            <h3>20,123</h3>
+                            <span>Happy Clients</span>
+                        </div>
+                        <div class="counter-item fade-anim delay-3">
+                            <h3>1,400</h3>
+                            <span>Projects Completed</span>
+                        </div>
+                        <div class="counter-item fade-anim delay-4">
+                            <h3>13,560</h3>
+                            <span>Customer Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
+            <section class="review-area bg-white">
+                <div class="content-wrap">
+                    <h2 class="fade-anim delay-1">Customer Reviews</h2>
+
+                    <div class="review-wrap">
+                        <div class="review-box fade-anim delay-2">
+                            <p>"Outstanding service and great support!"</p>
+                            <h4>John Doe</h4>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+
+                        <div class="review-box fade-anim delay-3">
+                            <p>"Professional team and fast delivery."</p>
+                            <h4>Sarah Smith</h4>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+
+                        <div class="review-box fade-anim delay-4">
+                            <p>"Highly recommend their services."</p>
+                            <h4>Alex Brown</h4>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     )
 
