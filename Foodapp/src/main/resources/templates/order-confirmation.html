@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #1f2937;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 24px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .greeting {
+            font-weight: bold;
+            color: #22c55e;
+        }
+
+        .order-table {
+            width: 100%;
+            margin-top: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .order-table th,
+        .order-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .order-table th {
+            background-color: #f1f5f9;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-top: 18px;
+            text-align: right;
+        }
+
+        .button-wrapper {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .button {
+            background-color: #2563eb;
+            color: #ffffff !important;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 32px;
+        }
+
+        .footer strong {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+<table>
+    <tr>
+        <td>
+            <div class="container">
+
+                <h1>Order Confirmed</h1>
+
+                <p class="greeting">
+                    Hello <span th:text="${customerName}">Customer</span>,
+                </p>
+
+                <p>
+                    Thank you for placing your order. We’ve received it successfully and are preparing everything for delivery.
+                </p>
+
+                <h2>Order Summary</h2>
+
+                <p><strong>Order ID:</strong> <span th:text="${orderId}"></span></p>
+                <p><strong>Order Date:</strong> <span th:text="${orderDate}"></span></p>
+                <p><strong>Delivery Address:</strong> <span th:text="${deliveryAddress}"></span></p>
+                <p><strong>Total Items:</strong> <span th:text="${totalItems}"></span></p>
+
+                <!-- Order Items Table -->
+                <table class="order-table" th:utext="${orderItemsHtml}">
+                </table>
+
+                <p class="total">
+                    Total Amount: <span th:text="${totalAmount}"></span>
+                </p>
+
+                <div class="button-wrapper">
+                    <a class="button" th:href="${paymentLink}">
+                        Pay Securely Now
+                    </a>
+                </div>
+
+                <p style="text-align:center; margin-top:12px; color:#6b7280;">
+                    Please complete your payment to process the order.
+                </p>
+
+                <div class="footer">
+                    <p>
+                        Need help? Contact us at
+                        <strong>support@phegondev.com</strong>
+                    </p>
+                    <p>
+                        &copy; <span th:text="${currentYear}">2025</span> DN Food. All rights reserved.
+                    </p>
+                </div>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
